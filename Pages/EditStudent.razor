@@ -10,13 +10,13 @@
 <div>
     <EditForm Model="@editedStudent" OnValidSubmit="UpdateStudent">
         <DataAnnotationsValidator />
-        <ValidationSummary />
 
         <div class="form-group">
             <label for="studName">Student Name:</label>
             @if (editedStudent != null)
             {
                 <InputText id="studName" class="form-control" @bind-Value="@editedStudent.StudName" />
+                <ValidationMessage For="@(() => editedStudent.StudName)" />
             }
         </div>
         <div class="form-group">
@@ -24,6 +24,7 @@
             @if (editedStudent != null)
             {
                 <InputNumber id="StudAge" class="form-control" @bind-Value="@editedStudent.StudAge" />
+                <ValidationMessage For="@(() => editedStudent.StudAge)" />
             }
         </div>
         <div class="form-group">
@@ -31,6 +32,7 @@
             @if (editedStudent != null)
             {
                 <InputText id="StudEmail" class="form-control" @bind-Value="@editedStudent.StudEmail" />
+                <ValidationMessage For="@(() => editedStudent.StudEmail)" />
             }
         </div>
         <div class="form-group">
@@ -38,6 +40,7 @@
             @if (editedStudent != null)
             {
                 <InputText id="StudDepartment" class="form-control" @bind-Value="@editedStudent.StudDepartment" />
+                <ValidationMessage For="@(() => editedStudent.StudDepartment)" />
             }
         </div>
         <div class="form-group">
@@ -45,6 +48,7 @@
             @if (editedStudent != null)
             {
                 <InputText id="Skills" class="form-control" @bind-Value="@editedStudent.Skills" />
+                <ValidationMessage For="@(() => editedStudent.Skills)" />
             }
         </div>
 

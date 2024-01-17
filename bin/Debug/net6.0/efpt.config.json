@@ -16,7 +16,15 @@
    "T4TemplatePath": null,
    "Tables": [
       {
+         "Name": "[dbo].[Skills]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Student]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[StudentSkills]",
          "ObjectType": 0
       },
       {
@@ -25,6 +33,10 @@
       },
       {
          "Name": "[dbo].[DeleteSoft]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetAllSkillsStudent]",
          "ObjectType": 1
       },
       {

@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorApp.Models;
 
@@ -9,14 +10,20 @@ public partial class Student
 {
     public int StudentId { get; set; }
 
+    [Required(ErrorMessage = "Student Name is required.")]
     public string StudName { get; set; }
 
+    [Range(1, 99, ErrorMessage = "Age must be between 1 and 99.")]
     public int? StudAge { get; set; }
 
+    [Required(ErrorMessage = "Email is required.")]
+    [EmailAddress(ErrorMessage = "Invalid Email Address.")]
     public string StudEmail { get; set; }
 
+    [Required(ErrorMessage = "Department is required.")]
     public string StudDepartment { get; set; }
 
+    [Required(ErrorMessage = "Skills are required.")]
     public string Skills { get; set; }
 
     public bool? IsActive { get; set; }
