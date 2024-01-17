@@ -1,0 +1,41 @@
+﻿@page "/deletedstudents"
+
+<PageTitle>Deleted Students</PageTitle>
+
+@using BlazorApp.Models
+@using BlazorApp.Data
+@inject StudentService StudentService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<h1>Deleted Students</h1>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Skills</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var deletedStudent in DeletedStudents ?? Enumerable.Empty<BlazorApp.Models.RestoreStudentResult>())
+        {
+            <tr>
+                <td>@deletedStudent.StudentId</td>
+                <td>@deletedStudent.StudName</td>
+                <td>@deletedStudent.StudAge</td>
+                <td>@deletedStudent.StudEmail</td>
+                <td>@deletedStudent.StudDepartment</td>
+                <td>@deletedStudent.Skills</td>
+                <td>
+                    <button class="btn btn-success btn-sm" @onclick='() => OnRestoreClicked(deletedStudent.StudentId)'>Restore</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
+

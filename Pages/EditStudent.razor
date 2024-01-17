@@ -1,0 +1,54 @@
+﻿@page "/editstudent"
+@page "/editStudent/{id?}"
+@using BlazorApp.Models
+@using BlazorApp.Data
+@inject StudentService StudentService
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
+
+<h1>Edit Student</h1>
+
+<div>
+    <EditForm Model="@editedStudent" OnValidSubmit="UpdateStudent">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="studName">Student Name:</label>
+            @if (editedStudent != null)
+            {
+                <InputText id="studName" class="form-control" @bind-Value="@editedStudent.StudName" />
+            }
+        </div>
+        <div class="form-group">
+            <label for="studAge">Age:</label>
+            @if (editedStudent != null)
+            {
+                <InputNumber id="StudAge" class="form-control" @bind-Value="@editedStudent.StudAge" />
+            }
+        </div>
+        <div class="form-group">
+            <label for="studEmail">Email:</label>
+            @if (editedStudent != null)
+            {
+                <InputText id="StudEmail" class="form-control" @bind-Value="@editedStudent.StudEmail" />
+            }
+        </div>
+        <div class="form-group">
+            <label for="studDepartment">Department:</label>
+            @if (editedStudent != null)
+            {
+                <InputText id="StudDepartment" class="form-control" @bind-Value="@editedStudent.StudDepartment" />
+            }
+        </div>
+        <div class="form-group">
+            <label for="skills">Skills:</label>
+            @if (editedStudent != null)
+            {
+                <InputText id="Skills" class="form-control" @bind-Value="@editedStudent.Skills" />
+            }
+        </div>
+
+        <button type="button" class="btn btn-warning m-2" @onclick="UpdateStudent">Update Student</button>
+        <button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
+    </EditForm>
+</div>
