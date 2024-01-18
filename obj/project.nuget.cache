@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4MdKIiOSrGF3qwGNvzzwFbSGGEwEO/6GL9qQvYXXUeXLPVTronxcKn2u+/NU4pWcSqph37H/WQPnKQ6AGigNyg==",
+  "dgSpecHash": "yO7FNkcJz+EmexKtq1cmu8QXuKOL9WbGsc42O96cJbHROOx284soNN/az8ZwZwdQiieWPNdY8ZGid0pchhZIpQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\owner\\Desktop\\Blazor\\CRUDBlazor_Vipin\\BlazorApp.csproj",
+  "projectFilePath": "C:\\Users\\owner\\Desktop\\CRUD\\CRUDBlazor_Vipin\\BlazorApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\owner\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -57,11 +57,7 @@
     "C:\\Users\\owner\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\owner\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\owner\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\owner\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\owner\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\owner\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
-    "C:\\Users\\owner\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
+    "C:\\Users\\owner\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

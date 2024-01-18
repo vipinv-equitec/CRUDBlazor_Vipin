@@ -34,6 +34,7 @@ namespace BlazorApp.Models
 
         protected void OnModelCreatingGeneratedProcedures(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<GetAllSkillsStudentResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<RestoreStudentResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<StudentDeleteByIdResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<StudentViewAllResult>().HasNoKey().ToView(null);
@@ -96,6 +97,32 @@ namespace BlazorApp.Models
                 parameterreturnValue,
             };
             var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[DeleteSoft] @StudentId", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<GetAllSkillsStudentResult>> GetAllSkillsStudentAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "StudentId",
+                    Value = StudentId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<GetAllSkillsStudentResult>("EXEC @returnValue = [dbo].[GetAllSkillsStudent] @StudentId", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 
@@ -274,10 +301,10 @@ namespace BlazorApp.Models
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<StudentViewByIdResult>("EXEC @returnValue = [dbo].[StudentViewById] @StudentId", sqlParameters, cancellationToken);
-            var student = _.SingleOrDefault();
+
             returnValue?.SetValue(parameterreturnValue.Value);
 
-            return student;
+            return _.FirstOrDefault();
         }
     }
 }

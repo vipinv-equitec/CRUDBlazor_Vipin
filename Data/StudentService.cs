@@ -14,14 +14,14 @@ namespace BlazorApp.Data
             List<StudentViewAllResult> students = await _dbContext.Procedures.StudentViewAllAsync();
             return students;
         }
-        public async Task AddStudentAsync(Student newStudent)
+        public async Task AddStudentAsync(Student newStudent, List<int> selectedSkills)
         {
             await _dbContext.Procedures.StudentEditAsync(newStudent.StudentId, newStudent.StudName, newStudent.StudAge, newStudent.StudEmail, newStudent.StudDepartment, newStudent.Skills);
             await _dbContext.SaveChangesAsync();
         }
         public async Task<Student?> GetStudentByIdAsync(int studentId)
         {
-            Student? student =  _dbContext.Students.Where(x => x.StudentId == studentId).FirstOrDefault();
+            Student? student = _dbContext.Students.Where(x => x.StudentId == studentId).FirstOrDefault();
             if (student == null)
             {
                 return null;
@@ -54,6 +54,13 @@ namespace BlazorApp.Data
             await _dbContext.Procedures.BackStudentAsync(studentId);
             await _dbContext.SaveChangesAsync();
         }
-
+        public async Task<List<GetAllSkillsStudentResult>> Skills(int studentId)
+        {
+            return await _dbContext.Procedures.GetAllSkillsStudentAsync(studentId);
+        }
+        public async Task<List<Skill>> GetAllSkills()
+        {
+            return await _dbContext.Skills.ToListAsync();
+        }
     }
 }

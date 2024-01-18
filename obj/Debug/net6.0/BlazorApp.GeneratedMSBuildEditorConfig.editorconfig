@@ -9,73 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorApp
 build_property.RootNamespace = BlazorApp
-build_property.ProjectDir = C:\Users\owner\Desktop\Blazor\CRUDBlazor_Vipin\
+build_property.ProjectDir = C:\Users\owner\Desktop\CRUD\CRUDBlazor_Vipin\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\owner\Desktop\Blazor\CRUDBlazor_Vipin
+build_property.MSBuildProjectDirectory = C:\Users\owner\Desktop\CRUD\CRUDBlazor_Vipin
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/App.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/AddStudent.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/AddStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/Counter.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/DeletedStudent.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/DeletedStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlZFN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/DetailStudent.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/DetailStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlsU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/EditStudent.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/EditStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/FetchData.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/Index.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/Student.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Student.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Shared/SurveyPrompt.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/_Imports.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Shared/MainLayout.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-3dsd3z3yec
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Shared/NavMenu.razor]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-7cxxmz0cwl
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/Error.cshtml]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/_Host.cshtml]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/owner/Desktop/Blazor/CRUDBlazor_Vipin/Pages/_Layout.cshtml]
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

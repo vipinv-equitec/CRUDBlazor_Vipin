@@ -14,6 +14,7 @@ namespace BlazorApp.Models
     {
         Task<int> BackStudentAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteSoftAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<GetAllSkillsStudentResult>> GetAllSkillsStudentAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<RestoreStudentResult>> RestoreStudentAsync(OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<StudentDeleteByIdResult>> StudentDeleteByIdAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> StudentDeleteByyIdAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

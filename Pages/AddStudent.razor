@@ -3,9 +3,7 @@
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-
 <h1>Add Student</h1>
-
 <div>
     <EditForm Model="@newStudent" OnValidSubmit="AddStud">
         <DataAnnotationsValidator />
@@ -31,11 +29,17 @@
             <ValidationMessage For="@(() => newStudent.StudDepartment)" />
         </div>
         <div class="form-group">
-            <label for="skills">Skills:</label>
-            <InputText id="skills" class="form-control" @bind-Value="@newStudent.Skills" />
-            <ValidationMessage For="@(() => newStudent.Skills)" />
+            <label>Skills:</label>
+            @foreach (var skill in allSkills)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="@($"chk_{skill.SkillId}")"
+                           checked="@selectedSkills.Contains(skill.SkillId)"
+                           @onchange="@(e => ToggleSkill(skill.SkillId))" />
+                    <label class="form-check-label" for="@($"chk_{skill.SkillId}")">@skill.SkillName</label>
+                </div>
+            }
         </div>
-
         <button type="submit" class="btn btn-success m-2">Add Student</button>
         <button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
     </EditForm>
