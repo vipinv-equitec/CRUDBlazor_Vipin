@@ -14,7 +14,7 @@ namespace BlazorApp.Data
             List<StudentViewAllResult> students = await _dbContext.Procedures.StudentViewAllAsync();
             return students;
         }
-        public async Task AddStudentAsync(Student newStudent, List<int> selectedSkills)
+        public async Task AddStudentAsync(Student newStudent)
         {
             await _dbContext.Procedures.StudentEditAsync(newStudent.StudentId, newStudent.StudName, newStudent.StudAge, newStudent.StudEmail, newStudent.StudDepartment, newStudent.Skills);
             await _dbContext.SaveChangesAsync();
@@ -61,6 +61,22 @@ namespace BlazorApp.Data
         public async Task<List<Skill>> GetAllSkills()
         {
             return await _dbContext.Skills.ToListAsync();
+        }
+        public async Task<int> GetStudentId(string email)
+        {
+            int? userId = await _dbContext.Students
+                .Where(e => e.StudEmail == email)
+                .Select(e => (int?)e.StudentId)
+                .FirstOrDefaultAsync();
+            return (int)userId;
+        }
+        public async Task<int> GetStudentsId(int studentid, int skillid)
+        {
+            return await _dbContext.Procedures.InsertDataAsync(studentid, skillid);
+        }
+        public async Task<List<Skill>> GetSkills(int studentId)
+        {
+            return await _dbContext.Skills.Where(skill => skill.Students.Any(student => student.StudentId == studentId)).ToListAsync();
         }
     }
 }

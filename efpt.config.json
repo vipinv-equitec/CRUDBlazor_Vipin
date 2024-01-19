@@ -40,6 +40,14 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[GetSkillById]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[InsertData]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[RestoreStudent]",
          "ObjectType": 1
       },

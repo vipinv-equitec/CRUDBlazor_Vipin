@@ -35,6 +35,7 @@ namespace BlazorApp.Models
         protected void OnModelCreatingGeneratedProcedures(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GetAllSkillsStudentResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<GetSkillByIdResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<RestoreStudentResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<StudentDeleteByIdResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<StudentViewAllResult>().HasNoKey().ToView(null);
@@ -123,6 +124,64 @@ namespace BlazorApp.Models
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<GetAllSkillsStudentResult>("EXEC @returnValue = [dbo].[GetAllSkillsStudent] @StudentId", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<GetSkillByIdResult>> GetSkillByIdAsync(int? studentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "studentId",
+                    Value = studentId ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<GetSkillByIdResult>("EXEC @returnValue = [dbo].[GetSkillById] @studentId", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<int> InsertDataAsync(int? Param1, int? Param2, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "Param1",
+                    Value = Param1 ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                new SqlParameter
+                {
+                    ParameterName = "Param2",
+                    Value = Param2 ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.Int,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.Database.ExecuteSqlRawAsync("EXEC @returnValue = [dbo].[InsertData] @Param1, @Param2", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

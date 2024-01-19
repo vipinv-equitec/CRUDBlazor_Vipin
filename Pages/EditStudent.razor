@@ -4,9 +4,7 @@
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-
 <h1>Edit Student</h1>
-
 <div>
     <EditForm Model="@editedStudent" OnValidSubmit="UpdateStudent">
         <DataAnnotationsValidator />
@@ -51,7 +49,6 @@
                 <ValidationMessage For="@(() => editedStudent.Skills)" />
             }
         </div>
-
         <button type="button" class="btn btn-warning m-2" @onclick="UpdateStudent">Update Student</button>
         <button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
     </EditForm>

@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
-
 namespace BlazorApp.Pages
 {
     public partial class EditStudent
     {
         [Parameter]
         public string? id { get; set; }
-
         private BlazorApp.Models.Student? editedStudent;
         protected override async Task OnInitializedAsync()
         {
@@ -29,7 +27,7 @@ namespace BlazorApp.Pages
         }
         private async Task BackToList()
         {
-            NavigationManager.NavigateTo("/studentdata");
+            NavigationManager.NavigateTo("/editStudentList");
         }
     }
 }

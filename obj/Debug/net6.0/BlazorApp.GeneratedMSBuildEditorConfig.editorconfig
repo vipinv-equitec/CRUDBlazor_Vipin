@@ -34,12 +34,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlZFN0dWRlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/DeleteStudentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlU3R1ZGVudExpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/DetailStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlsU3R1ZGVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/DetailStudentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlsU3R1ZGVudExpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/EditStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0dWRlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/EditStudentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFN0dWRlbnRMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/FetchData.razor]
@@ -48,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/RestoreStudentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdG9yZVN0dWRlbnRMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/owner/Desktop/CRUD/CRUDBlazor_Vipin/Pages/Student.razor]

@@ -8,7 +8,7 @@ namespace BlazorApp.Pages
         private List<int> selectedSkills = new List<int>();
         protected override async Task OnInitializedAsync()
         {
-            allSkills = await StudentService.GetAllSkills(); // Fetch all skills from the service
+            allSkills = await StudentService.GetAllSkills();
         }
         private void ToggleSkill(int skillId)
         {
@@ -19,10 +19,12 @@ namespace BlazorApp.Pages
         }
         private async Task AddStud()
         {
-            // Set the selected skills for the new student
-            newStudent.SkillsNavigation = allSkills.Where(skill => selectedSkills.Contains(skill.SkillId)).ToList();
-            await StudentService.AddStudentAsync(newStudent, selectedSkills);
-
+            await StudentService.AddStudentAsync(newStudent);
+            int id = await StudentService.GetStudentId(newStudent.StudEmail);
+            foreach (var skill in selectedSkills)
+            {
+                await StudentService.GetStudentsId(id, skill);
+            }
             NavigationManager.NavigateTo("/studentdata");
         }
         private async Task BackToList()
