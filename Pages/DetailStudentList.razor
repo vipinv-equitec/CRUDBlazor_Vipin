@@ -1,31 +1,92 @@
-﻿@page "/detailStudentList"
+﻿@page "/detailStudentList/{StudentId:int}"
 @using BlazorApp.Models
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-
-<h3>Student Details</h3>
-
+<h1 class="colorBlue">
+    Student Details
+</h1>
 @if (Student != null)
 {
-    <dl>
-        <dt>Student ID</dt>
-        <dd>@Student.StudentId</dd>
-        <dt>Student Name</dt>
-        <dd>@Student.StudName</dd>
-        <dt>Age</dt>
-        <dd>@Student.StudAge</dd>
-        <dt>Email</dt>
-        <dd>@Student.StudEmail</dd>
-        <dt>Department</dt>
-        <dd>@Student.StudDepartment</dd>
-        <dt>Skills</dt>
-        <dd>@studList</dd>
-    </dl>
+    <EditForm Model="@Student">
+        <DataAnnotationsValidator />
+        <ul class="row forumBox">
+            <li class="col-3">
+                <label class="inputLabel">
+                    Student ID
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputNumber @bind-Value="Student.StudentId" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Student Name
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="Student.StudName" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Age
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputNumber @bind-Value="Student.StudAge" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Email
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="Student.StudEmail" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Department
+                </label>
+            </li>
+            <li class="col-3">
+                <div class="form_inputBox">
+                    <InputText @bind-Value="Student.StudDepartment" class="form-control" disabled="disabled" />
+                </div>
+            </li>
+            <li class="col-3">
+                <label class="inputLabel">
+                    Skills
+                </label>
+            </li>
+            <li class="col-3">
+                @* <div class="form_inputBox">
+                    <InputText @bind-Value="studList" class="form-control" disabled="disabled" />
+                </div> *@
+                @foreach (var skill in allSkills)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="@($"chk_{skill.SkillId}")"
+                               checked="@skillsId.Contains(skill.SkillId)" disabled="disabled" />
+                        <label class="form-check-label" for="@($"chk_{skill.SkillId}")">@skill.SkillName</label>
+                    </div>
+                }
+            </li>
+
+            <li class="col-12 mt_10">
+                <div class="form_btns">
+                    <button type="button" class="common_btn btnBlue" @onclick="@(() => OnDeleteClicked(Student.StudentId))">Delete</button>
+                    <button type="button" class="common_btn btnGry" @onclick="BackToList">Back To List</button>
+                </div>
+            </li>
+        </ul>
+    </EditForm>
 }
-else
-{
-    <p>Student not found.</p>
-}
-<button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
 

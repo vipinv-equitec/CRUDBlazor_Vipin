@@ -52,7 +52,7 @@
 }
 
 .hover-row:hover {
-    background-color: #E7AC54;
+    background-color: black !important;
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {

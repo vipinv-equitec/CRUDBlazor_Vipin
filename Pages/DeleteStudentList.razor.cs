@@ -15,10 +15,9 @@ namespace BlazorApp.Pages
                 student.Skills = string.Join(", ", skills.Select(skill => skill.Skillname));
             }
         }
-        public async Task OnDeleteClicked(int id)
+        public async Task Delete(int studentId)
         {
-            await StudentService.DeleteStudentAsync(id);
-            NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+            NavigationManager.NavigateTo($"/detailStudentList/{studentId}");
         }
     }
 }

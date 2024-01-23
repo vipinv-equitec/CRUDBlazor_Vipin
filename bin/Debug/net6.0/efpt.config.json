@@ -32,6 +32,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[DeleteSkill]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[DeleteSoft]",
          "ObjectType": 1
       },

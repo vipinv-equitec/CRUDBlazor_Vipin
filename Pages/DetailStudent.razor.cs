@@ -1,6 +1,5 @@
 ﻿using BlazorApp.Models;
 using Microsoft.AspNetCore.Components;
-
 namespace BlazorApp.Pages
 {
     public partial class DetailStudent
@@ -9,18 +8,33 @@ namespace BlazorApp.Pages
         private StudentViewByIdResult? Student { get; set; }
         private List<Skill> selectedSkills = new List<Skill>();
         private List<string> skills = new List<string>();
+        private List<Skill> allSkills = new List<Skill>();
+        private List<int> skillsId = new List<int>();
         private string? studList;
         protected override async Task OnInitializedAsync()
         {
             Student = await StudentService.GetStudentByyIdAsync(StudentId);
             selectedSkills = await StudentService.GetSkills(StudentId);
+            allSkills = await StudentService.GetAllSkills();
             foreach (var skillid in selectedSkills)
             {
                 skills.Add(skillid.SkillName);
             }
-            foreach(var skill in skills)
+            /*foreach(var skill in skills)
             {
-                studList = studList + "," + skill;
+                studList =  skill + "," + studList;
+            }
+            if(studList != null)
+            {
+                studList = studList.Substring(0, studList.Length - 1);
+            }
+            else
+            {
+                studList = "no skills";
+            }*/
+            foreach (var skill in selectedSkills)
+            {
+                skillsId.Add(skill.SkillId);
             }
         }
         private async Task BackToList()

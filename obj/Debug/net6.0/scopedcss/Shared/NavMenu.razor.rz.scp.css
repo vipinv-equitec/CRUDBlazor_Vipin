@@ -32,11 +32,12 @@
     }
 
     .nav-item[b-7cxxmz0cwl]  a {
-        color: #d7d7d7;
+        color: black;
         border-radius: 4px;
         height: 3rem;
-        display: flex;
+        display: block;
         align-items: center;
+        justify-content:center
         line-height: 3rem;
     }
 
@@ -46,7 +47,7 @@
 }
 
 .nav-item[b-7cxxmz0cwl]  a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: #e7ac54;
     color: white;
 }
 

@@ -4,7 +4,7 @@
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-<h1>Deleted Students</h1>
+@* <h1>Deleted Students</h1>
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -34,6 +34,39 @@
         }
     </tbody>
 </table>
-<button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
+<button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button> *@
+<h1 class="colorBlue">Restore Student </h1>
+<div class="table_detailsemply">
+    <table class="employee_table loan_table" width="100%">
+        <thead>
+            <tr>
+                <th class="bg_primary color_white">Student ID</th>
+                <th class="bg_primary color_white">StudName</th>
+                <th class="bg_primary color_white">StudAge</th>
+                <th class="bg_primary color_white">StudEmail</th>
+                <th class="bg_primary color_white">StudDepartment</th>
+                <th class="bg_primary color_white">Skills</th>
+                <th class="bg_primary color_white"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var deletedStudent in DeletedStudents ?? Enumerable.Empty<BlazorApp.Models.RestoreStudentResult>())
+            {
+                <tr class="hover-row">
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.StudentId</a></td>
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.StudName</a></td>
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.StudAge</a></td>
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.StudEmail</a></td>
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.StudDepartment</a></td>
+                    <td class="color_primary"><a href="javascript:void(0);">@deletedStudent.Skills</a></td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" @onclick="@(() => OnRestoreClicked(deletedStudent.StudentId))">Restore</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 

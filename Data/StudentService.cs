@@ -78,5 +78,9 @@ namespace BlazorApp.Data
         {
             return await _dbContext.Skills.Where(skill => skill.Students.Any(student => student.StudentId == studentId)).ToListAsync();
         }
+        public async Task DeleteStudentSkills(int studentId)
+        {
+            await _dbContext.Procedures.DeleteSkillAsync(studentId);
+        }
     }
 }

@@ -2,21 +2,32 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BlazorApp.Models;
-
 public partial class Student
 {
     public int StudentId { get; set; }
 
+    [Required(ErrorMessage = "Student name is required.")]
+    [StringLength(100, MinimumLength = 2, ErrorMessage = "Student name must be between 2 and 100 characters.")]
     public string StudName { get; set; }
 
+    [Required(ErrorMessage = "Age is required.")]
+    [Range(1, 99, ErrorMessage = "Age must be between 1 and 99.")]
     public int? StudAge { get; set; }
 
+    [Required(ErrorMessage = "Email is required.")]
+    [EmailAddress(ErrorMessage = "Invalid email address.")]
+    [StringLength(100, ErrorMessage = "Email address must be less than 100 characters.")]
+/*    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email address")]*/
     public string StudEmail { get; set; }
 
+    [Required(ErrorMessage = "Department is required.")]
+    [StringLength(50, ErrorMessage = "Department must be less than 50 characters.")]
     public string StudDepartment { get; set; }
 
+    [StringLength(255, ErrorMessage = "Skills must be less than 255 characters.")]
     public string Skills { get; set; }
 
     public bool? IsActive { get; set; }

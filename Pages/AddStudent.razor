@@ -3,79 +3,79 @@
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-<h1>Add Student</h1>
-<div>
-    <EditForm Model="newStudent" OnValidSubmit="AddStud">
-        <DataAnnotationsValidator />
-         <ul class="row forumBox">
+
+<h1 class="colorBlue">
+    Add Student
+</h1>
+<EditForm Model="newStudent" OnValidSubmit="AddStud">
+    <DataAnnotationsValidator />
+
+    <ul class="row forumBox">
         <li class="col-3 required">
-                <label class="inputLabel">Student Name:</label>
+            <label class="inputLabel">Student Name:</label>
         </li>
-        <li class="col-3">
+        <li class="col-3 required">
             <div class="form_inputBox">
-                    <InputText @bind-Value="newStudent.StudName" class="form-control" maxlength="20" />
+                <InputText @bind-Value="newStudent.StudName" class="form-control" maxlength="20" />
             </div>
             <div class="erroeText">
                 <ValidationMessage For="(() => newStudent.StudName)"></ValidationMessage>
             </div>
         </li>
         <li class="col-3 required">
-                <label class="inputLabel">Age:</label>
+            <label class="inputLabel">Age:</label>
         </li>
-        <li class="col-3">
+        <li class="col-3 required">
             <div class="form_inputBox">
-                    <InputNumber @bind-Value="newStudent.StudAge" class="form-control" maxlength="100" />
+                <InputNumber @bind-Value="newStudent.StudAge" class="form-control" maxlength="100" />
             </div>
             <div class="erroeText">
                 <ValidationMessage For="(() => newStudent.StudAge)"></ValidationMessage>
             </div>
         </li>
-        <li class="col-3">
-                <label class="inputLabel">Email:</label>
+        <li class="col-3 required">
+            <label class="inputLabel">Email:</label>
         </li>
-        <li class="col-3">
+        <li class="col-3 required">
             <div class="form_inputBox">
-                    <InputText @bind-Value="newStudent.StudEmail" class="form-control" maxlength="200" />
+                <InputText @bind-Value="newStudent.StudEmail" class="form-control" maxlength="200" />
             </div>
             <div class="erroeText">
                 <ValidationMessage For="(() =>newStudent.StudEmail)"></ValidationMessage>
             </div>
         </li>
         <li class="col-3 required">
-                <label class="inputLabel">Department:</label>
+            <label class="inputLabel">Department:</label>
         </li>
-        <li class="col-3">
+        <li class="col-3 required">
             <div class="form_inputBox">
-                    <InputText @bind-Value="newStudent.StudDepartment" class="form-control" maxlength="20" />
+                <InputText @bind-Value="newStudent.StudDepartment" class="form-control" maxlength="20" />
             </div>
             <div class="erroeText">
                 <ValidationMessage For="(() =>newStudent.StudDepartment)"></ValidationMessage>
             </div>
         </li>
-        <li class="col-3 required">
+        <li class="col-3">
             <label class="inputLabel">
-                    Skills:
+                Skills:
             </label>
         </li>
         <li class="col-3">
-                @foreach (var skill in allSkills)
-                {
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="@($"chk_{skill.SkillId}")"
-                               checked="@selectedSkills.Contains(skill.SkillId)"
-                               @onchange="@(e => ToggleSkill(skill.SkillId))" />
-                        <label class="form-check-label" for="@($"chk_{skill.SkillId}")">@skill.SkillName</label>
-                    </div>
-                }
+            @foreach (var skill in allSkills)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="@($"chk_{skill.SkillId}")"
+                           checked="@selectedSkills.Contains(skill.SkillId)"
+                           @onchange="@(e => ToggleSkill(skill.SkillId))" />
+                    <label class="form-check-label" for="@($"chk_{skill.SkillId}")">@skill.SkillName</label>
+                </div>
+            }
         </li>
         <li class="col-12 mt_20">
             <div class="form_btns">
-                    <button type="submit" class="common_btn btnBlue">Add Student</button>
-                    <button type="button" class="common_btn btnGry" @onclick="BackToList">Back To List</button>
+                <button type="submit" class="common_btn btnBlue">Add Student</button>
+                <button type="button" class="common_btn btnGry" @onclick="BackToList">Back To List</button>
             </div>
         </li>
     </ul>
-    </EditForm>
-</div>
-
-                    +
+</EditForm>

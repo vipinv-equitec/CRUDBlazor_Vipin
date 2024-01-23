@@ -13,6 +13,7 @@ namespace BlazorApp.Models
     public partial interface IStudentContextProcedures
     {
         Task<int> BackStudentAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<int> DeleteSkillAsync(int? studentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<int> DeleteSoftAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetAllSkillsStudentResult>> GetAllSkillsStudentAsync(int? StudentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<GetSkillByIdResult>> GetSkillByIdAsync(int? studentId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);

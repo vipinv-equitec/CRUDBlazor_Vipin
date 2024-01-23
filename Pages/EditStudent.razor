@@ -1,55 +1,111 @@
-﻿@page "/editstudent"
-@page "/editStudent/{id?}"
+﻿@* @page "/editstudent" *@
+@page "/editStudent/{id:int}"
 @using BlazorApp.Models
 @using BlazorApp.Data
 @inject StudentService StudentService
 @inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager
-<h1>Edit Student</h1>
-<div>
-    <EditForm Model="@editedStudent" OnValidSubmit="UpdateStudent">
-        <DataAnnotationsValidator />
+<EditForm Model="editedStudent" OnValidSubmit="UpdateStudent">
+    <DataAnnotationsValidator />
+    <h1 class="colorBlue">
+        Edit Student
+    </h1>
+    <ul class="row forumBox">
+        <li class="col-3 required">
+            <label class="inputLabel">
+                Student Name:
+            </label>
+        </li>
 
-        <div class="form-group">
-            <label for="studName">Student Name:</label>
-            @if (editedStudent != null)
+        <li class="col-3">
+            <div class="form_inputBox">
+                @if (editedStudent != null)
+                {
+                    <InputText @bind-Value="editedStudent.StudName" class="form-control" maxlength="20" />
+                }
+            </div>
+            <div class="erroeText">
+                @if (editedStudent != null)
+                {
+                    <ValidationMessage For="(() => editedStudent.StudName)"></ValidationMessage>
+                }
+            </div>
+        </li>
+
+        <li class="col-3 required">
+            <label class="inputLabel">Age:</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                @if (editedStudent != null)
+                {
+                    <InputNumber @bind-Value="editedStudent.StudAge" class="form-control" maxlength="100" />
+                }
+            </div>
+            <div class="erroeText">
+                @if (editedStudent != null)
+                {
+                    <ValidationMessage For="(() => editedStudent.StudAge)"></ValidationMessage>
+                }
+            </div>
+        </li>
+        <li class="col-3 required">
+            <label class="inputLabel">Email:</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                @if (editedStudent != null)
+                {
+                    <InputText @bind-Value="editedStudent.StudEmail" class="form-control" maxlength="200" />
+                }
+
+            </div>
+            <div class="erroeText">
+                @if (editedStudent != null)
+                {
+                    <ValidationMessage For="(() =>editedStudent.StudEmail)"></ValidationMessage>
+                }
+            </div>
+        </li>
+        <li class="col-3 required">
+            <label class="inputLabel">Department:</label>
+        </li>
+        <li class="col-3">
+            <div class="form_inputBox">
+                @if (editedStudent != null)
+                {
+                    <InputText @bind-Value="editedStudent.StudDepartment" class="form-control" maxlength="20" />
+                }
+            </div>
+            <div class="erroeText">
+                @if (editedStudent != null)
+                {
+                    <ValidationMessage For="(() =>editedStudent.StudDepartment)"></ValidationMessage>
+                }
+            </div>
+        </li>
+        <li class="col-3">
+            <label class="inputLabel">
+                Skills:
+            </label>
+        </li>
+        <li class="col-3">
+            @foreach (var skill in allSkills)
             {
-                <InputText id="studName" class="form-control" @bind-Value="@editedStudent.StudName" />
-                <ValidationMessage For="@(() => editedStudent.StudName)" />
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="@($"chk_{skill.SkillId}")"
+                           checked="@selectedSkills.Contains(skill.SkillId)"
+                           @onchange="@(e => ToggleSkill(skill.SkillId))" />
+                    <label class="form-check-label" for="@($"chk_{skill.SkillId}")">@skill.SkillName</label>
+                </div>
             }
-        </div>
-        <div class="form-group">
-            <label for="studAge">Age:</label>
-            @if (editedStudent != null)
-            {
-                <InputNumber id="StudAge" class="form-control" @bind-Value="@editedStudent.StudAge" />
-                <ValidationMessage For="@(() => editedStudent.StudAge)" />
-            }
-        </div>
-        <div class="form-group">
-            <label for="studEmail">Email:</label>
-            @if (editedStudent != null)
-            {
-                <InputText id="StudEmail" class="form-control" @bind-Value="@editedStudent.StudEmail" />
-                <ValidationMessage For="@(() => editedStudent.StudEmail)" />
-            }
-        </div>
-        <div class="form-group">
-            <label for="studDepartment">Department:</label>
-            @if (editedStudent != null)
-            {
-                <InputText id="StudDepartment" class="form-control" @bind-Value="@editedStudent.StudDepartment" />
-                <ValidationMessage For="@(() => editedStudent.StudDepartment)" />
-            }
-        </div>
-        <div class="form-group">
-            <label for="skills">Skills:</label>
-            @if (editedStudent != null)
-            {
-                <InputText id="Skills" class="form-control" @bind-Value="@editedStudent.Skills" />
-                <ValidationMessage For="@(() => editedStudent.Skills)" />
-            }
-        </div>
-        <button type="button" class="btn btn-warning m-2" @onclick="UpdateStudent">Update Student</button>
-        <button type="button" class="btn btn-primary m-2" @onclick="BackToList">Back to List</button>
-    </EditForm>
-</div>
+        </li>
+
+        <li class="col-12">
+            <div class="form_btns">
+                <button type="submit" class="common_btn btnBlue">Update Student</button>
+                <button type="button" class="common_btn btnGry" @onclick="BackToList">Back To List</button>
+            </div>
+        </li>
+    </ul>
+</EditForm>
+ 
